@@ -91,9 +91,11 @@
 
         noBtn.addEventListener("mouseover", () => {
 
+            // Move NO button randomly
             noBtn.style.top = Math.random() * 80 + "vh";
             noBtn.style.left = Math.random() * 80 + "vw";
 
+            // Create extra YES buttons
             const extraYes = document.createElement("button");
 
             extraYes.innerHTML = "YES ❤️";
