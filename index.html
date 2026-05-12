@@ -1,59 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Be My Valentine?</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WILL YOU BE MY MINE??? ITS THE 13TH OF MAY 💋</title>
+    <link rel="icon" type="image/x-icon" href="public/heart.gif">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Handjet:wght@100..900&family=Tiny5&display=swap" rel="stylesheet">
+    <audio id="hoverSound" src="https://www.soundjay.com/buttons/sounds/button-3.mp3"></audio>
+    <audio id="yesSound" src="https://www.soundjay.com/human/sounds/applause-01.mp3"></audio>
+    <audio id="noSound" src="https://www.soundjay.com/misc/sounds/fail-trombone-03.mp3"></audio>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 <body>
-
-    <div class="overlay">
-        <h1>Tanima, will you be my Valentine? ❤️</h1>
-
-        <div class="buttons" id="buttons-container">
-            <button id="yes" onclick="showLove()">Yes</button>
-            <button id="no" onclick="multiplyYes()">No</button>
-        </div>
+<div class="container">
+    <h1>WILL YOU BE MINE??? 💖</h1>
+    <img src="https://i.pinimg.com/originals/07/6d/a6/076da60f5b9569f2cc8cadee0e8c1992.gif" alt="Cute GIF" class="gif">
+    <div class="buttons">
+        <button id="yesBtn">Да</button>
+        <button id="noBtn">Нет</button>
     </div>
-
-    <script>
-        let firstClick = true;
-
-        function multiplyYes() {
-
-            if (firstClick) {
-                alert("You are breaking my heart GOLDFISH");
-                firstClick = false;
-            } else {
-                alert("Na ah nah");
-            }
-
-            const container = document.getElementById("buttons-container");
-
-            for (let i = 0; i < 2; i++) {
-                let yesButton = document.createElement("button");
-
-                yesButton.innerText = "Yes";
-                yesButton.onclick = showLove;
-
-                yesButton.style.fontSize = "20px";
-                yesButton.style.padding = "12px 24px";
-                yesButton.style.margin = "5px";
-                yesButton.style.backgroundColor = "#ff4d6d";
-                yesButton.style.color = "white";
-                yesButton.style.border = "none";
-                yesButton.style.borderRadius = "10px";
-                yesButton.style.cursor = "pointer";
-
-                container.appendChild(yesButton);
-            }
-        }
-
-        function showLove() {
-            window.location.href = "yes.html";
-        }
-    </script>
-
+    <p id="responseText"></p>
+</div>
+<canvas id="heartsCanvas"></canvas>
+<script src="script.js"></script>
 </body>
 </html>
