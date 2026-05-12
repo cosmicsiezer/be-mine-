@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forever Rani</title>
+    <title>Be Mine ❤️</title>
 
     <style>
         body {
             margin: 0;
-            padding: 0;
             height: 100vh;
             overflow: hidden;
 
@@ -19,8 +18,8 @@
             align-items: center;
             flex-direction: column;
 
-            text-align: center;
             font-family: Arial, sans-serif;
+            text-align: center;
         }
 
         body::before {
@@ -32,97 +31,93 @@
             z-index: 0;
         }
 
-        img {
-            width: 280px;
-            border-radius: 20px;
-            box-shadow: 0 0 25px rgba(255,255,255,0.7);
-            z-index: 2;
-        }
-
-        .message {
-            margin-top: 20px;
-            font-size: 2.3em;
-            font-weight: bold;
+        h1 {
             color: white;
+            font-size: 3em;
             z-index: 2;
 
             text-shadow:
-                0 0 5px #fff,
-                0 0 10px #ff4da6,
-                0 0 20px #ff4da6,
-                0 0 40px #ff1a75;
-
-            animation: glow 2s infinite alternate;
-            padding: 10px;
+                0 0 5px white,
+                0 0 10px #ff66b3,
+                0 0 20px #ff1a75;
         }
 
-        @keyframes glow {
-            from {
-                text-shadow:
-                    0 0 5px #fff,
-                    0 0 10px #ff4da6,
-                    0 0 20px #ff4da6;
-            }
-
-            to {
-                text-shadow:
-                    0 0 10px #fff,
-                    0 0 20px #ff66b3,
-                    0 0 40px #ff1a75,
-                    0 0 60px #ff1a75;
-            }
+        .buttons {
+            margin-top: 30px;
+            z-index: 2;
         }
 
-        .heart {
+        button {
+            padding: 15px 30px;
+            margin: 10px;
+            border: none;
+            border-radius: 12px;
+
+            font-size: 1.2em;
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        #yesBtn {
+            background: #ff4d88;
+            color: white;
+        }
+
+        #yesBtn:hover {
+            background: #ff1a66;
+            transform: scale(1.1);
+        }
+
+        #noBtn {
+            background: white;
+            color: #ff4d88;
             position: absolute;
-            bottom: -50px;
-            color: rgba(255,255,255,0.85);
-            font-size: 20px;
-            animation: float 6s linear infinite;
-            z-index: 1;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 1;
-            }
-
-            100% {
-                transform: translateY(-110vh) rotate(360deg);
-                opacity: 0;
-            }
         }
     </style>
 </head>
 
 <body>
 
-    <img src="cateyes.jpg" alt="Cute Cat Eyes">
+    <h1>Will You Be Mine? ❤️</h1>
 
-    <div class="message">
-        Gonna cherish you forever MOHA RANI ❤️
+    <div class="buttons">
+        <button id="yesBtn" onclick="goToYesPage()">YES ❤️</button>
+        <button id="noBtn">NO 💔</button>
     </div>
 
     <script>
-        function createHeart() {
-            const heart = document.createElement("div");
+        const noBtn = document.getElementById("noBtn");
 
-            heart.classList.add("heart");
-            heart.innerHTML = "❤️";
+        noBtn.addEventListener("mouseover", () => {
 
-            heart.style.left = Math.random() * 100 + "vw";
-            heart.style.fontSize = (Math.random() * 20 + 20) + "px";
-            heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+            noBtn.style.top = Math.random() * 80 + "vh";
+            noBtn.style.left = Math.random() * 80 + "vw";
 
-            document.body.appendChild(heart);
+            const extraYes = document.createElement("button");
 
-            setTimeout(() => {
-                heart.remove();
-            }, 6000);
+            extraYes.innerHTML = "YES ❤️";
+            extraYes.style.position = "absolute";
+
+            extraYes.style.top = Math.random() * 80 + "vh";
+            extraYes.style.left = Math.random() * 80 + "vw";
+
+            extraYes.style.background = "#ff4d88";
+            extraYes.style.color = "white";
+
+            extraYes.style.padding = "15px 30px";
+            extraYes.style.border = "none";
+            extraYes.style.borderRadius = "12px";
+            extraYes.style.cursor = "pointer";
+
+            extraYes.onclick = goToYesPage;
+
+            document.body.appendChild(extraYes);
+        });
+
+        function goToYesPage() {
+            window.location.href = "yes.html";
         }
-
-        setInterval(createHeart, 300);
     </script>
 
 </body>
